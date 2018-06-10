@@ -1,23 +1,10 @@
 import React, { Component } from 'react'
 import logo from '../logo.svg'
 import './App.css'
+import { actionChangeName, actionChangeSurname } from '../store/actions'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-
-const actionChangeName = (newName) => {
-  return {
-      type: 'CHANGE_NAME',
-      payload: newName
-  }
-}
-
-const actionChangeSurname = (newSurname) => {
-  return {
-      type: 'CHANGE_SURNAME',
-      payload: newSurname
-  }
-}
 
 class App extends Component {
   render() {
@@ -30,12 +17,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>{ `${name} and ${surname}`}</h1>
         <input type="text" placeholder="Name" value={name} onChange={(event) => { changeName(event.target.value) }} />
         <input type="text" placeholder="Surname" value={surname} onChange={(event) => { changeSurname(event.target.value) }} />  
-        <h1>{ `${name} and ${surname}`}</h1>
       </div>
     );
   }
