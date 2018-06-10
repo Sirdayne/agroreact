@@ -26,3 +26,16 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.fields{
+  margin-top: 25px;
+  display: block;
+}
+
+.field{
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  font-size: 13px;
+  border: 1px solid #323232;
+}

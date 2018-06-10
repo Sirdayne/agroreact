@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import fullname from './fullname';
-import fields from './fields';
+import entities from './entities';
 
 export default combineReducers({
   fullname,
-  fields
+  entities
 })
