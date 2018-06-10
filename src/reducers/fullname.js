@@ -3,7 +3,7 @@ const initialState = {
     surname: 'Mussin'
 }
 
-export const rootReducer = (state = initialState, action) => {
+export default function fullname (state = initialState, action) {
     if (action.type === 'CHANGE_NAME') {
         return { ...state, name: action.payload}
     }

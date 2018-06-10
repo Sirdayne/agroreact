@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import logo from '../logo.svg'
 import './App.css'
-import { actionChangeName, actionChangeSurname } from '../store/actions'
+import { actionChangeName, actionChangeSurname } from '../actions/fullname'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class App extends Component {
   render() {
+    console.log(this.props)
     const dispatch = this.props.dispatch
+    
     const {name, surname, changeName, changeSurname } = this.props
 
     return (
@@ -26,10 +28,10 @@ class App extends Component {
 }
 
 const putStateToProps = (state) => {
-  console.log(state)
+  //console.log(state)
   return {
-      name: state.name,
-      surname: state.surname
+      name: state.fullname.name,
+      surname: state.fullname.surname
   }
 }
 
